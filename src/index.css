@@ -1,3 +1,47 @@
 body {
   margin: 0;
 }
+
+.navigate-up {
+  width: 36px;
+  bottom: calc(100vh - 60px) !important;
+  right: calc(50vw - 36px) !important;
+}
+
+.navigate-down {
+  width: 36px;
+  bottom: 0px !important;
+  right: calc(50vw - 36px) !important;
+}
+
+.reveal .controls[data-controls-back-arrows=faded] .navigate-up.enabled {
+  opacity: 1 !important;
+}
+.reveal .controls button {
+  color: #fff !important;
+}
+
+.animate-delay-500ms {
+  -webkit-animation-delay: 500ms;
+  animation-delay: 500ms;
+}
+
+.animate-delay-700ms {
+  -webkit-animation-delay: 700ms;
+  animation-delay: 700ms;
+}
+
+.animate-delay-1400ms {
+  -webkit-animation-delay: 1400ms;
+  animation-delay: 1400ms;
+}
+
+.animate-delay-2100ms {
+  -webkit-animation-delay: 2100ms;
+  animation-delay: 2100ms;
+}
+
+.animate-delay-2800ms {
+  -webkit-animation-delay: 2800ms;
+  animation-delay: 2800ms;
+}
