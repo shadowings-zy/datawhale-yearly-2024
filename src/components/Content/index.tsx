@@ -6,35 +6,37 @@ import { Project } from './components/Project/index.tsx';
 import { CommitInfo } from './components/CommitInfo/index.tsx';
 import { DatawhaleInfo } from './components/DatawhaleInfo/index.tsx';
 import { Summary } from './components/Summary/index.tsx';
+import { useWindowSize } from '../../utils/windowSize.ts';
 
 interface ContentProps {
     currentSlide: number;
     index: number;
     slideType: SLIDE_TYPE;
-    data: ContentData;
+    data: ContentData | null;
+    username: string;
 }
 
 export const Content = (props: ContentProps) => {
-    const { currentSlide, index, slideType, data } = props;
-
+    const { currentSlide, index, slideType, data, username } = props;
+    const { windowHeight } = useWindowSize();
 
     const renderContent = () => {
-        if (slideType === SLIDE_TYPE.CONTRIBUTE) {
+        if (slideType === SLIDE_TYPE.CONTRIBUTE && data) {
             return <Contribute data={data} show={currentSlide === index} />;
-        } else if (slideType === SLIDE_TYPE.PROJECT) {
+        } else if (slideType === SLIDE_TYPE.PROJECT && data) {
             return <Project data={data} show={currentSlide === index} />;
-        } else if (slideType === SLIDE_TYPE.COMMIT_INFO) {
+        } else if (slideType === SLIDE_TYPE.COMMIT_INFO && data) {
             return <CommitInfo data={data} show={currentSlide === index} />;
         } else if (slideType === SLIDE_TYPE.DATAWHALE_INFO) {
-            return <DatawhaleInfo show={currentSlide === index} />;
+            return <DatawhaleInfo noCommit={data === null} show={currentSlide === index} />;
         } else if (slideType === SLIDE_TYPE.SUMMARY) {
-            return <Summary data={data} show={currentSlide === index} />;
+            return <Summary data={data} username={username} show={currentSlide === index} />;
         }
         return <div>slide{props.index}</div>
     }
 
     return (
-        <div className="content" style={{ height: window.innerHeight }}>
+        <div className="content" style={{ height: windowHeight }}>
             <div className={`${slideType === SLIDE_TYPE.SUMMARY ? 'slide-content-summary-area' : 'slide-content-area'} animate__animated ${currentSlide === index ? 'animate__fadeIn animate-delay-500ms' : 'animate__fadeOut'}`}>
                 {renderContent()}
             </div>

@@ -45,3 +45,7 @@ export const titleMap = {
     [TITLE_TYPE.DEFAULT]: '潜力开源贡献者',
 }
 
+
+export interface SlideData {
+    slideType: SLIDE_TYPE;
+}

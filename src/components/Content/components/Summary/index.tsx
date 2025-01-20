@@ -4,21 +4,22 @@ import '../../index.css';
 
 
 interface IProps {
-    data: ContentData;
+    data: ContentData | null;
+    username: string;
     show: boolean;
 }
 
 export const Summary = (props: IProps) => {
-    const { data, show } = props;
+    const { data, username, show } = props;
 
     const getTitle = () => {
-        if (data.maxCommitProject.yearGrowth > 2000) {
+        if (data && data.maxCommitProject.yearGrowth > 2000) {
             return titleMap[TITLE_TYPE.CONTRIBUTE];
-        } else if (data.project.length > 3) {
+        } else if (data && data.project.length > 3) {
             return titleMap[TITLE_TYPE.PROJECT];
-        } else if (data.lastCommitTime) {
+        } else if (data && data.lastCommitTime) {
             return titleMap[TITLE_TYPE.HARDWORK];
-        } else if (data.codeCount > 2000) {
+        } else if (data && data.codeCount > 2000) {
             return titleMap[TITLE_TYPE.CODE];
         }
         return titleMap[TITLE_TYPE.DEFAULT];
@@ -32,7 +33,7 @@ export const Summary = (props: IProps) => {
             <div className={`content-text animate__animated ${show ? 'animate-delay-1400ms animate__zoomIn' : 'animate__fadeOut'}`}>
                 今年
                 <span className="content-text-primary">
-                    {` ${data.username} `}
+                    {` ${username} `}
                 </span>
                 的称号是：
             </div>

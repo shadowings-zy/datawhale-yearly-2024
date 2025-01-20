@@ -8,10 +8,12 @@ import background03 from '../../assets/03.png';
 import background04 from '../../assets/04.png';
 import background05 from '../../assets/04.png';
 import { wait } from '../../utils/wait.ts';
-import { ContentData } from '../../constants/index.ts';
+import { ContentData, PAGE_TYPE } from '../../constants/index.ts';
+import { useWindowSize } from '../../utils/windowSize.ts';
 
 interface IProps {
     handleSubmit: (username: string, contentDataList: ContentData[]) => void;
+    pageType: PAGE_TYPE;
 }
 
 let progressTimer: any = null;
@@ -19,9 +21,11 @@ const MAX_PROGRESS = 90;
 const LOADING_TIME = 2000;
 
 export const Welcome = (props: IProps) => {
-    const { handleSubmit } = props;
+    const { handleSubmit, pageType } = props;
 
+    const { windowHeight } = useWindowSize();
     const [loading, setLoading] = useState(true);
+    const [buttonAnimation, setButtonAnimation] = useState(false);
     const [scrollProgress, setScrollProgress] = useState(0);
     const usernameRef = useRef('');
     const scrollProgressRef = useRef(0);
@@ -62,7 +66,11 @@ export const Welcome = (props: IProps) => {
 
     const onClickSubmit = () => {
         if (contentDataListRef.current) {
-            handleSubmit(usernameRef.current, contentDataListRef.current);
+            setButtonAnimation(true);
+            setTimeout(() => {
+                handleSubmit(usernameRef.current, contentDataListRef.current);
+                setButtonAnimation(false);
+            }, 1000);
         }
     }
 
@@ -87,8 +95,9 @@ export const Welcome = (props: IProps) => {
     }, []);
 
     return (
-        <div className="welcome" style={{
+        <div className={`welcome animate__animated ${buttonAnimation ? 'animate__fadeOut' : ''}`} style={{
             backgroundImage: `url(${background})`,
+            height: windowHeight,
         }}>
             <div className='welcome-content-area'>
                 <div className='welcome-content-title-wrapper'>
@@ -111,7 +120,7 @@ export const Welcome = (props: IProps) => {
                             placeholder="请输入你的github用户名"
                             onChange={onInputChange}
                         />
-                        <button className='welcome-button' onClick={onClickSubmit}>点击开启年度总结</button>
+                        <button className="welcome-button" onClick={onClickSubmit}>点击开启年度总结</button>
                     </div>
                 </div>
             </div>
