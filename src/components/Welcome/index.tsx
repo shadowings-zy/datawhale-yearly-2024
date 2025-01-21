@@ -45,8 +45,8 @@ export const Welcome = (props: IProps) => {
       const image5 = new Image();
       image5.src = background05;
       const audio = new Audio();
-      audio.src = 'https://zy-oss-sg.oss-ap-southeast-1.aliyuncs.com/state-of-datawhale.mp3';
-      const userData = await fetch(`https://zy-oss-sg.oss-ap-southeast-1.aliyuncs.com/datawhale-data-2024.json`);
+      audio.src = 'https://datawhale.oss-cn-hangzhou.aliyuncs.com/SEO/state-of-datawhale.mp3';
+      const userData = await fetch(`https://datawhale.oss-cn-hangzhou.aliyuncs.com/SEO/datawhale-2024-data.json`);
       const userDataJson = await userData.json();
       await wait(LOADING_TIME);
       contentDataListRef.current = userDataJson;

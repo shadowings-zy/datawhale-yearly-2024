@@ -14,7 +14,7 @@ export enum PAGE_TYPE {
 export interface ProjectData {
   name: string;
   yearGrowth: number;
-  starCount: number;
+  commitCount: number;
 }
 
 export interface ContentData {
