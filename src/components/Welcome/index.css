@@ -1,129 +1,128 @@
 .welcome {
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: radial-gradient(circle, #a29dee, #483bc2);
-    background-size: cover;
-    background-position: center;
-    position: relative;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, #a29dee, #483bc2);
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
 .welcome-content-area {
-    width: 85%;
-    height: 75%;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 85%;
+  height: 75%;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-
 .welcome-content-title-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
 }
 
 .welcome-logo {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 12px;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 12px;
 }
 
 .welcome-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #2669b2;
+  font-size: 24px;
+  font-weight: bold;
+  color: #2669b2;
 }
 
 .welcome-control-wrapper {
-    width: 100%;
-    height: 240px;
-    position: relative;
+  width: 100%;
+  height: 240px;
+  position: relative;
 }
 
 .welcome-input-wrapper {
-    position: absolute;
-    top: 24px;
-    width: 100%;
-    height: 240px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+  position: absolute;
+  top: 24px;
+  width: 100%;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .welcome-input {
-    width: calc(100% - 108px);
-    height: 36px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 0 12px;
-    margin-bottom: 24px;
-    font-size: 16px;
-    margin-bottom: 48px;
+  width: calc(100% - 108px);
+  height: 36px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0 12px;
+  margin-bottom: 24px;
+  font-size: 16px;
+  margin-bottom: 48px;
 }
 
 .welcome-button {
-    width: 200px;
-    height: 40px;
-    border-radius: 4px;
-    background-color: #2669b2;
-    color: #fff;
-    border: none;
-    font-size: 16px;
-    line-height: 40px;
+  width: 200px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #2669b2;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  line-height: 40px;
 }
 
 .welcome-scroll-wrapper {
-    position: absolute;
-    top: 36px;
-    width: 100%;
-    height: 24px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  top: 36px;
+  width: 100%;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .welcome-scroll-text {
-    width: 36px;
-    height: 24px;
-    margin-left: 12px;
-    line-height: 24px;
+  width: 36px;
+  height: 24px;
+  margin-left: 12px;
+  line-height: 24px;
 }
 
 .welcome-scroll-progress-wrapper {
-    width: calc(100% - 144px);
-    height: 12px;
-    background-color: #ccc;
-    border-radius: 6px;
-    overflow: hidden;
+  width: calc(100% - 144px);
+  height: 12px;
+  background-color: #ccc;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .welcome-scroll-progress {
-    height: 100%;
-    background-color: #2669b2;
-    border-radius: 6px;
+  height: 100%;
+  background-color: #2669b2;
+  border-radius: 6px;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .welcome-footer {
-    position: absolute;
-    width: 100%;
-    bottom: 12px;
-    height: 24px;
-    line-height: 24px;
-    color: #fff;
-    font-weight: 600;
-    font-size: 14px;
+  position: absolute;
+  width: 100%;
+  bottom: 12px;
+  height: 24px;
+  line-height: 24px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
 }

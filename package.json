@@ -54,7 +54,8 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js",
+    "format": "prettier --write ./src"
   },
   "eslintConfig": {
     "extends": [
@@ -79,6 +80,8 @@
     ]
   },
   "devDependencies": {
-    "@types/reveal.js": "^5.0.4"
+    "@types/reveal.js": "^5.0.4",
+    "prettier": "3.4.2",
+    "typescript": "^5.7.3"
   }
 }

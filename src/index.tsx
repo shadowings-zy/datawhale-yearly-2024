@@ -4,9 +4,7 @@ import './index.css';
 import 'animate.css';
 import { App } from './components/App/index.tsx';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
     <App />

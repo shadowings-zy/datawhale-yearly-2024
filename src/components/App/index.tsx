@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Reveal from "reveal.js";
-import "reveal.js/dist/reveal.css";
-import "reveal.js/dist/theme/sky.css";
+import Reveal from 'reveal.js';
+import 'reveal.js/dist/reveal.css';
+import 'reveal.js/dist/theme/sky.css';
 import './index.css';
 import { Content } from '../Content/index.tsx';
 import background01 from '../../assets/01.png';
@@ -20,8 +20,8 @@ const BACKGROUND_MAP = {
   [SLIDE_TYPE.CONTRIBUTE]: background04,
   [SLIDE_TYPE.PROJECT]: background02,
   [SLIDE_TYPE.COMMIT_INFO]: background03,
-  [SLIDE_TYPE.SUMMARY]: background05,
-}
+  [SLIDE_TYPE.SUMMARY]: background05
+};
 
 export const App = () => {
   const { windowWidth, windowHeight } = useWindowSize();
@@ -39,23 +39,31 @@ export const App = () => {
       alert('请输入用户名');
       return;
     }
-    const currentUserContentData = contentDataList.find(item => item.username === username || item.email === username);
+    const currentUserContentData = contentDataList.find(
+      (item) => item.username === username || item.email === username
+    );
     setMuted(false);
     setUsername(username);
     setPageType(PAGE_TYPE.CONTENT);
     setContentData(currentUserContentData ? currentUserContentData : null);
     if (currentUserContentData) {
-      setSlideTypeList([SLIDE_TYPE.DATAWHALE_INFO, SLIDE_TYPE.CONTRIBUTE, SLIDE_TYPE.PROJECT, SLIDE_TYPE.COMMIT_INFO, SLIDE_TYPE.SUMMARY]);
+      setSlideTypeList([
+        SLIDE_TYPE.DATAWHALE_INFO,
+        SLIDE_TYPE.CONTRIBUTE,
+        SLIDE_TYPE.PROJECT,
+        SLIDE_TYPE.COMMIT_INFO,
+        SLIDE_TYPE.SUMMARY
+      ]);
     } else {
       setSlideTypeList([SLIDE_TYPE.DATAWHALE_INFO, SLIDE_TYPE.SUMMARY]);
     }
-  }
+  };
 
   const handleResize = () => {
     if (deckRef.current) {
       deckRef.current.configure({
         width: windowWidth,
-        height: windowHeight,
+        height: windowHeight
       });
     }
   };
@@ -67,17 +75,16 @@ export const App = () => {
       controls: true,
       controlsTutorial: true,
       progress: false,
-      transition: "slide",
+      transition: 'slide',
       width: windowWidth,
       height: windowHeight,
       controlsLayout: 'edges',
       scrollActivationWidth: 0,
       hideInactiveCursor: true,
-      hideCursorTime: 0,
+      hideCursorTime: 0
     });
 
-    deckRef.current.initialize({
-    }).then(() => {
+    deckRef.current.initialize({}).then(() => {
       if (deckRef.current) {
         deckRef.current.on('slidechanged', (event) => {
           setCurrentSlide(event.indexv);
@@ -95,27 +102,40 @@ export const App = () => {
           deckRef.current = null;
         }
       } catch (e) {
-        console.warn("Reveal.js destroy call failed.");
+        console.warn('Reveal.js destroy call failed.');
       }
     };
   }, [pageType]);
 
   return (
-    <div className="app" style={{
-      height: windowHeight,
-      backgroundImage: `url(${background01})`,
-    }}>
+    <div
+      className="app"
+      style={{
+        height: windowHeight,
+        backgroundImage: `url(${background01})`
+      }}
+    >
       <Volume muted={muted} setMuted={setMuted} />
-      {pageType === PAGE_TYPE.WELCOME && <Welcome handleSubmit={handleSubmit} pageType={pageType} />}
+      {pageType === PAGE_TYPE.WELCOME && <Welcome handleSubmit={handleSubmit} />}
       {pageType === PAGE_TYPE.CONTENT && (
-        <div className="reveal" ref={deckDivRef} style={{
-          display: pageType === PAGE_TYPE.CONTENT ? 'block' : 'none',
-        }}>
+        <div
+          className="reveal"
+          ref={deckDivRef}
+          style={{
+            display: pageType === PAGE_TYPE.CONTENT ? 'block' : 'none'
+          }}
+        >
           <div className="slides">
             <section>
               {slideTypeList.map((slideType, index) => (
                 <section key={`content-${index}`} data-background-image={BACKGROUND_MAP[slideType]}>
-                  <Content currentSlide={currentSlide} index={index} slideType={slideType} data={contentData} username={username} />
+                  <Content
+                    currentSlide={currentSlide}
+                    index={index}
+                    slideType={slideType}
+                    data={contentData}
+                    username={username}
+                  />
                 </section>
               ))}
             </section>
@@ -124,4 +144,4 @@ export const App = () => {
       )}
     </div>
   );
-}
+};

@@ -1,149 +1,150 @@
 .content {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .slide-content-area {
+  width: 85%;
+  height: 75%;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: left;
+  position: relative;
+}
+
+@media (max-height: 700px) {
+  .content-text {
+    color: #000;
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 16px;
+  }
+
+  .content-text-primary {
+    color: #e7a217;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 18px;
+  }
+
+  .slide-content-summary-area {
     width: 85%;
-    height: 75%;
+    height: 70%;
+    margin-bottom: 20%;
     background: rgba(255, 255, 255, 0.8);
     border-radius: 12px;
     padding: 24px;
     text-align: left;
     position: relative;
-}
+  }
 
-@media (max-height: 700px) {
-    .content-text {
-        color: #000;
-        font-size: 18px;
-        line-height: 28px;
-        margin-bottom: 16px;
-    }
+  .content-text-summary-title {
+    height: 100px;
+    color: #e7a217;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 120px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 24px;
+  }
 
-    .content-text-primary {
-        color: #e7a217;
-        font-size: 18px;
-        font-weight: bold;
-        line-height: 18px;
-    }
+  .content-text-summary-footer {
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
 
-    .slide-content-summary-area {
-        width: 85%;
-        height: 70%;
-        margin-bottom: 20%;
-        background: rgba(255, 255, 255, 0.8);
-        border-radius: 12px;
-        padding: 24px;
-        text-align: left;
-        position: relative;
-    }
+  .content-text-summary-qrcode {
+    border-radius: 4px;
+    width: 80px;
+    height: 80px;
+    background: url('https://zy-oss-sg.oss-ap-southeast-1.aliyuncs.com/state-of-datawhale-2024.png') no-repeat center
+      center;
+    background-size: 100% 100%;
+  }
 
-
-    .content-text-summary-title {
-        height: 100px;
-        color: #e7a217;
-        font-size: 32px;
-        font-weight: bold;
-        line-height: 120px;
-        text-align: center;
-        width: 100%;
-        margin-bottom: 24px;
-    }
-
-    .content-text-summary-footer {
-        width: 100%;
-        height: 80px;
-        position: absolute;
-        bottom: 12px;
-        left: 12px;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    .content-text-summary-qrcode {
-        border-radius: 4px;
-        width: 80px;
-        height: 80px;
-        background: url('https://zy-oss-sg.oss-ap-southeast-1.aliyuncs.com/state-of-datawhale-2024.png') no-repeat center center;
-        background-size: 100% 100%;
-    }
-
-    .content-text-summary-footer-text {
-        margin-left: 16px;
-        text-align: left;
-        font-size: 14px;
-        font-weight: 600;
-        color: #fff;
-    }
+  .content-text-summary-footer-text {
+    margin-left: 16px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
 }
 
 @media (min-height: 701px) {
-    .content-text {
-        color: #000;
-        font-size: 20px;
-        line-height: 32px;
-        margin-bottom: 20px;
-    }
+  .content-text {
+    color: #000;
+    font-size: 20px;
+    line-height: 32px;
+    margin-bottom: 20px;
+  }
 
-    .content-text-primary {
-        color: #e7a217;
-        font-size: 20px;
-        font-weight: bold;
-        line-height: 32px;
-    }
+  .content-text-primary {
+    color: #e7a217;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 32px;
+  }
 
-    .slide-content-summary-area {
-        width: 85%;
-        height: 70%;
-        margin-bottom: 25%;
-        background: rgba(255, 255, 255, 0.8);
-        border-radius: 12px;
-        padding: 24px;
-        text-align: left;
-        position: relative;
-    }
+  .slide-content-summary-area {
+    width: 85%;
+    height: 70%;
+    margin-bottom: 25%;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: left;
+    position: relative;
+  }
 
-    .content-text-summary-title {
-        height: 160px;
-        color: #e7a217;
-        font-size: 32px;
-        font-weight: bold;
-        line-height: 160px;
-        text-align: center;
-        width: 100%;
-        margin-bottom: 20px;
-    }
+  .content-text-summary-title {
+    height: 160px;
+    color: #e7a217;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 160px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
 
-    .content-text-summary-footer {
-        width: 100%;
-        height: 120px;
-        position: absolute;
-        bottom: 12px;
-        left: 12px;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-    }
+  .content-text-summary-footer {
+    width: 100%;
+    height: 120px;
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
 
-    .content-text-summary-qrcode {
-        border-radius: 4px;
-        width: 120px;
-        height: 120px;
-        background: url('https://zy-oss-sg.oss-ap-southeast-1.aliyuncs.com/state-of-datawhale-2024.png') no-repeat center center;
-        background-size: 100% 100%;
-    }
+  .content-text-summary-qrcode {
+    border-radius: 4px;
+    width: 120px;
+    height: 120px;
+    background: url('https://zy-oss-sg.oss-ap-southeast-1.aliyuncs.com/state-of-datawhale-2024.png') no-repeat center
+      center;
+    background-size: 100% 100%;
+  }
 
-    .content-text-summary-footer-text {
-        margin-left: 16px;
-        text-align: left;
-        font-size: 16px;
-        font-weight: 600;
-        color: #fff;
-    }
+  .content-text-summary-footer-text {
+    margin-left: 16px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+  }
 }

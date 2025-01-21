@@ -14,7 +14,7 @@ body {
   right: calc(50vw - 36px) !important;
 }
 
-.reveal .controls[data-controls-back-arrows=faded] .navigate-up.enabled {
+.reveal .controls[data-controls-back-arrows='faded'] .navigate-up.enabled {
   opacity: 1 !important;
 }
 .reveal .controls button {
