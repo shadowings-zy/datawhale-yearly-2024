@@ -116,6 +116,7 @@ export default function Volume(props: IProps) {
         ref={audioRef}
         src="https://zy-oss-sg.oss-ap-southeast-1.aliyuncs.com/state-of-datawhale.mp3"
         type="audio/mpeg"
+        loop
       />
     </>
   );

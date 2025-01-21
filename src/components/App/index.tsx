@@ -107,6 +107,16 @@ export const App = () => {
     };
   }, [pageType]);
 
+  if (windowWidth > windowHeight * 0.8) {
+    return (
+      <div
+        className="use-mobile-container"
+      >
+        <div className="use-mobile">请使用手机竖屏查看总结报告</div>
+      </div>
+    );
+  }
+
   return (
     <div
       className="app"

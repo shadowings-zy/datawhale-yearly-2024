@@ -54,7 +54,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "PUBLIC_URL=https://datawhale.oss-cn-hangzhou.aliyuncs.com/SEO/datawhale-2024/ node scripts/build.js",
+    "build": "cross-env PUBLIC_URL=https://datawhale.oss-cn-hangzhou.aliyuncs.com/SEO/datawhale-2024/ node scripts/build.js",
     "format": "prettier --write ./src"
   },
   "eslintConfig": {
@@ -81,6 +81,7 @@
   },
   "devDependencies": {
     "@types/reveal.js": "^5.0.4",
+    "cross-env": "^7.0.3",
     "prettier": "3.4.2",
     "typescript": "^5.7.3"
   }

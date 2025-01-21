@@ -5,3 +5,19 @@
   background-size: cover;
   background-position: center;
 }
+
+
+.use-mobile-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.use-mobile {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 600;
+}
