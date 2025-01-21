@@ -26,6 +26,7 @@ export interface ContentData {
   maxCommitProject: ProjectData;
   maxCommitProjectCommitCount: number;
   lastCommitTime?: string;
+  lastCommitProjectName?: string;
 }
 
 export enum TITLE_TYPE {
