@@ -46,7 +46,7 @@ export const Welcome = (props: IProps) => {
       image5.src = background05;
       const audio = new Audio();
       audio.src = 'https://zy-oss-sg.oss-ap-southeast-1.aliyuncs.com/state-of-datawhale.mp3';
-      const userData = await fetch(`http://192.168.199.144:3000/test.json`);
+      const userData = await fetch(`https://zy-oss-sg.oss-ap-southeast-1.aliyuncs.com/datawhale-data-2024.json`);
       const userDataJson = await userData.json();
       await wait(LOADING_TIME);
       contentDataListRef.current = userDataJson;
