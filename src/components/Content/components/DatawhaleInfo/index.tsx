@@ -27,8 +27,8 @@ export const DatawhaleInfo = (props: IProps) => {
           <span className="content-text-primary">{` 第7 `}</span>
           ，在国内的知识分享类组织中排名
           <span className="content-text-primary">{` 第3 `}</span>
-          ，在国内 AI 开源组织里更是
-          <span className="content-text-primary">{` 独占鳌头 `}</span>。
+          ，在国内 AI 开源组织中排名
+          <span className="content-text-primary">{` 第1 `}</span>。
         </div>
         <div
           className={`content-text animate__animated ${show ? 'animate-delay-2100ms animate__zoomIn' : 'animate__fadeOut'}`}
@@ -50,8 +50,8 @@ export const DatawhaleInfo = (props: IProps) => {
         <span className="content-text-primary">{` 第7 `}</span>
         ，在国内的知识分享类组织中排名
         <span className="content-text-primary">{` 第3 `}</span>
-        ，在国内 AI 开源组织里更是
-        <span className="content-text-primary">{` 独占鳌头 `}</span>。
+        ，在国内 AI 开源组织中排名
+        <span className="content-text-primary">{` 第1 `}</span>。
       </div>
       <div
         className={`content-text animate__animated ${show ? 'animate-delay-1400ms animate__zoomIn' : 'animate__fadeOut'}`}

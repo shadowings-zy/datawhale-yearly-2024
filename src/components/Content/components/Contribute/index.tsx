@@ -14,7 +14,7 @@ export const Contribute = (props: IProps) => {
       <div
         className={`content-text animate__animated ${show ? 'animate-delay-700ms animate__zoomIn' : 'animate__fadeOut'}`}
       >
-        在过去一年，你的贡献如同灵动的音符，在Datawhale的舞台上奏响了精彩的乐章。下面，让我们一同回顾你在这一年里留下的坚实印记。
+        在过去一年，你的贡献如同灵动的音符，在Datawhale的舞台上奏响了精彩的乐章。
       </div>
       <div
         className={`content-text animate__animated ${show ? 'animate-delay-1400ms animate__zoomIn' : 'animate__fadeOut'}`}
@@ -42,8 +42,7 @@ export const Contribute = (props: IProps) => {
         全年，你总计提交了
         <span className="content-text-primary">{` ${data.commitCount} `}</span>次 commit
         <span className="content-text-primary">{` ${data.codeCount} `}</span>
-        行代码，每一次 commit
-        的代码都是你为项目添砖加瓦的见证。它们如同城市的建筑，构建起一个个惊艳的项目，为学习者带来价值。
+        行代码，每一次提交都是你为项目添砖加瓦的见证。它们如同城市的建筑，构建出惊艳的项目，为学习者带来价值。
       </div>
     </>
   );

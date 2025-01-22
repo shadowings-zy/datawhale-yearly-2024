@@ -68,6 +68,20 @@ export const App = () => {
     }
   };
 
+  const setNavigatePosition = () => {
+    const navigateUpElement = document.querySelector('.navigate-up') as HTMLElement;
+    if (navigateUpElement) {
+      navigateUpElement.style.bottom = `${windowHeight * 0.96 - 36}px`;
+      navigateUpElement.style.right = `${windowWidth / 2 - 36}px`;
+    }
+
+    const navigateDownElement = document.querySelector('.navigate-down') as HTMLElement;
+    if (navigateDownElement) {
+      navigateDownElement.style.bottom = `0px`;
+      navigateDownElement.style.right = `${windowWidth / 2 - 36}px`;
+    }
+  };
+
   useEffect(() => {
     if (deckRef.current || !deckDivRef.current) return;
 
@@ -89,6 +103,8 @@ export const App = () => {
         deckRef.current.on('slidechanged', (event) => {
           setCurrentSlide(event.indexv);
         });
+
+        setNavigatePosition();
       }
     });
 
@@ -107,13 +123,9 @@ export const App = () => {
     };
   }, [pageType]);
 
-  console.log(windowInitWidth, windowInitHeight);
-
   if (windowInitWidth > windowInitHeight * 0.9) {
     return (
-      <div
-        className="use-mobile-container"
-      >
+      <div className="use-mobile-container">
         <div className="use-mobile">请将手机竖屏放置后</div>
         <div className="use-mobile">刷新页面查看总结报告</div>
       </div>

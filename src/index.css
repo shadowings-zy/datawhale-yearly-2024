@@ -4,14 +4,10 @@ body {
 
 .navigate-up {
   width: 36px;
-  bottom: calc(100vh - 60px) !important;
-  right: calc(50vw - 36px) !important;
 }
 
 .navigate-down {
   width: 36px;
-  bottom: 0px !important;
-  right: calc(50vw - 36px) !important;
 }
 
 .reveal .controls[data-controls-back-arrows='faded'] .navigate-up.enabled {

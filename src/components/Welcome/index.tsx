@@ -74,6 +74,8 @@ export const Welcome = (props: IProps) => {
   };
 
   const startProgress = () => {
+    setScrollProgress(0);
+    scrollProgressRef.current = 0;
     progressTimer = setInterval(() => {
       if (scrollProgressRef.current < MAX_PROGRESS) {
         scrollProgressRef.current = scrollProgressRef.current + 1;
@@ -83,6 +85,8 @@ export const Welcome = (props: IProps) => {
   };
 
   const stopProgress = () => {
+    setScrollProgress(100);
+    scrollProgressRef.current = 100;
     if (progressTimer) {
       clearInterval(progressTimer);
       progressTimer = null;
