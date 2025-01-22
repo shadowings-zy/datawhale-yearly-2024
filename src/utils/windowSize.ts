@@ -6,7 +6,17 @@ export const useWindowSize = () => {
     windowHeight: window.innerHeight
   });
 
+  const [windowInitSize, setWindowInitSize] = useState({
+    windowInitWidth: window.innerWidth,
+    windowInitHeight: window.innerHeight
+  });
+
   useEffect(() => {
+    setWindowInitSize({
+      windowInitWidth: window.innerWidth,
+      windowInitHeight: window.innerHeight
+    });
+
     const handleResize = () => {
       setWindowSize({
         windowWidth: window.innerWidth,
@@ -21,5 +31,5 @@ export const useWindowSize = () => {
     };
   }, []);
 
-  return windowSize;
+  return { ...windowSize, ...windowInitSize };
 };

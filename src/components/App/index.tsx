@@ -24,7 +24,7 @@ const BACKGROUND_MAP = {
 };
 
 export const App = () => {
-  const { windowWidth, windowHeight } = useWindowSize();
+  const { windowWidth, windowHeight, windowInitWidth, windowInitHeight } = useWindowSize();
   const deckDivRef = useRef<HTMLDivElement>(null);
   const deckRef = useRef<Reveal.Api | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -107,12 +107,15 @@ export const App = () => {
     };
   }, [pageType]);
 
-  if (windowWidth > windowHeight * 0.8) {
+  console.log(windowInitWidth, windowInitHeight);
+
+  if (windowInitWidth > windowInitHeight * 0.9) {
     return (
       <div
         className="use-mobile-container"
       >
-        <div className="use-mobile">请使用手机竖屏查看总结报告</div>
+        <div className="use-mobile">请将手机竖屏放置后</div>
+        <div className="use-mobile">刷新页面查看总结报告</div>
       </div>
     );
   }
